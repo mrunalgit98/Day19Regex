@@ -70,11 +70,28 @@ public class User {
         }
     }
 
+    public static void passwordValidation(){
+        Scanner sc=new Scanner(System.in);
+        String Password="[a-zA-Z0-9!@#$]{8}";
+        System.out.println("enter password");
+        String password=sc.next();
+
+        Pattern pattern=Pattern.compile(Password);
+        Matcher matcher=pattern.matcher(password);
+        boolean result =matcher.matches();
+        if(result==true){
+            System.out.println("password is valid");
+        }else{
+            System.out.println("password is invalid nter min 8 character");
+        }
+    }
+
 
     public static void main(String[] args) {
         firstname();
         lastname();
         Email();
         MobileNumber();
+        passwordValidation();
     }
 }
