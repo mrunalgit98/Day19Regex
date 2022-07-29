@@ -119,6 +119,22 @@ public class User {
             System.out.println("password is invalid enter min 8 character");
         }
     }
+
+    public static void passwordValidation4(){
+        Scanner sc=new Scanner(System.in);
+        String Password="[A-Z]+[0-9]+[~!@#$%^&*]{1}[a-zA-Z0-9!@#$%]{5}";
+        System.out.println("enter password with min one number and one Uppercase And at least one special character ");
+        String password=sc.next();
+
+        Pattern pattern=Pattern.compile(Password);
+        Matcher matcher=pattern.matcher(password);
+        boolean result =matcher.matches();
+        if(result==true){
+            System.out.println("password is valid");
+        }else{
+            System.out.println("password is invalid enter min 8 character and special charcter");
+        }
+    }
     public static void main(String[] args) {
 //        firstname();
 //        lastname();
@@ -126,6 +142,7 @@ public class User {
 //        MobileNumber();
 //        passwordValidation();
   //      passwordValidation2();
-        passwordValidation3();
+  //      passwordValidation3();
+        passwordValidation4();
     }
 }
