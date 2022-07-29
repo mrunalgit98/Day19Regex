@@ -6,35 +6,35 @@ import java.util.regex.Pattern;
 
 public class User {
 
-//    public static void firstname(){
-//      String firstname="[A-Z]{1}[a-z]{2}";
-//        Scanner sc =new Scanner(System.in);
-//        System.out.println("enter first name");
-//        String firstname1=sc.next();
-//
-//        Pattern pattern =Pattern.compile(firstname);
-//        Matcher matcher =pattern.matcher(firstname1);
-//        boolean result=matcher.matches();
-//
-//        if(result==true)
-//            System.out.println("first name is valid");
-//        else System.out.println("first name is not valid");
-//    }
-//
-//    public static void lastname(){
-//        String lastname="[A-Z]{1}[a-z]{2}";
-//        Scanner sc =new Scanner(System.in);
-//        System.out.println("enter last name");
-//        String lastname1=sc.next();
-//
-//        Pattern pattern =Pattern.compile(lastname);
-//        Matcher matcher =pattern.matcher(lastname1);
-//        boolean result=matcher.matches();
-//
-//        if(result==true)
-//            System.out.println("last name is valid");
-//        else System.out.println("last name is not valid");
-//    }
+    public static void firstname(){
+      String firstname="[A-Z]{1}[a-z]{2}";
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter first name");
+        String firstname1=sc.next();
+
+        Pattern pattern =Pattern.compile(firstname);
+        Matcher matcher =pattern.matcher(firstname1);
+        boolean result=matcher.matches();
+
+        if(result==true)
+            System.out.println("first name is valid");
+        else System.out.println("first name is not valid");
+    }
+
+    public static void lastname(){
+        String lastname="[A-Z]{1}[a-z]{2}";
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter last name");
+        String lastname1=sc.next();
+
+        Pattern pattern =Pattern.compile(lastname);
+        Matcher matcher =pattern.matcher(lastname1);
+        boolean result=matcher.matches();
+
+        if(result==true)
+            System.out.println("last name is valid");
+        else System.out.println("last name is not valid");
+    }
 
     public static void Email(){
         String email="[a-zA-Z0-9.]+[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.][a-z]*";
@@ -53,11 +53,28 @@ public class User {
         }
 
     }
+    public static void MobileNumber(){
+        Scanner sc=new Scanner(System.in);
+        String mobileno="(91-)[0-9]{10}";
+        System.out.println("enter phone number");
+        String phno= sc.next();
+
+        Pattern pattern=Pattern.compile(mobileno);
+        Matcher matcher=pattern.matcher(phno);
+        boolean result=matcher.matches();
+
+        if(result==true){
+            System.out.println("mobile number is valid");
+        }else {
+            System.out.println("mobile number is invalid");
+        }
+    }
 
 
     public static void main(String[] args) {
-//        firstname();
-//        lastname();
+        firstname();
+        lastname();
         Email();
+        MobileNumber();
     }
 }
