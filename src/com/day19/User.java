@@ -21,7 +21,22 @@ public class User {
         else System.out.println("first name is not valid");
     }
 
+    public static void lastname(){
+        String lastname="[A-Z]{1}[a-z]{2}";
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter last name");
+        String lastname1=sc.next();
+
+        Pattern pattern =Pattern.compile(lastname);
+        Matcher matcher =pattern.matcher(lastname1);
+        boolean result=matcher.matches();
+
+        if(result==true)
+            System.out.println("last name is valid");
+        else System.out.println("last name is not valid");
+    }
     public static void main(String[] args) {
         firstname();
+        lastname();
     }
 }
