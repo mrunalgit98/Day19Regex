@@ -103,12 +103,29 @@ public class User {
         }
     }
 
+
+    public static void passwordValidation3(){
+        Scanner sc=new Scanner(System.in);
+        String Password="[A-Z]+[0-9][a-zA-Z0-9!@#$%]{6}";
+        System.out.println("enter password with min one number and one Uppercase ");
+        String password=sc.next();
+
+        Pattern pattern=Pattern.compile(Password);
+        Matcher matcher=pattern.matcher(password);
+        boolean result =matcher.matches();
+        if(result==true){
+            System.out.println("password is valid");
+        }else{
+            System.out.println("password is invalid enter min 8 character");
+        }
+    }
     public static void main(String[] args) {
 //        firstname();
 //        lastname();
 //        Email();
 //        MobileNumber();
 //        passwordValidation();
-        passwordValidation2();
+  //      passwordValidation2();
+        passwordValidation3();
     }
 }
