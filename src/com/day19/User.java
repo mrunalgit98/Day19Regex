@@ -87,11 +87,28 @@ public class User {
     }
 
 
+    public static void passwordValidation2(){
+        Scanner sc=new Scanner(System.in);
+        String Password="[A-Z]+[a-zA-Z0-9!@#$%]{7}";
+        System.out.println("enter password with min one character should be capital");
+        String password=sc.next();
+
+        Pattern pattern=Pattern.compile(Password);
+        Matcher matcher=pattern.matcher(password);
+        boolean result =matcher.matches();
+        if(result==true){
+            System.out.println("password is valid");
+        }else{
+            System.out.println("password is invalid enter min 8 character");
+        }
+    }
+
     public static void main(String[] args) {
-        firstname();
-        lastname();
-        Email();
-        MobileNumber();
-        passwordValidation();
+//        firstname();
+//        lastname();
+//        Email();
+//        MobileNumber();
+//        passwordValidation();
+        passwordValidation2();
     }
 }
