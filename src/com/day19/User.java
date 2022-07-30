@@ -55,7 +55,7 @@ public class User {
     }
     public static void MobileNumber(){
         Scanner sc=new Scanner(System.in);
-        String mobileno="(91-)[0-9]{10}";
+        String mobileno="(91-)[0-9]{10}$";
         System.out.println("enter phone number");
         String phno= sc.next();
 
